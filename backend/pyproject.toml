@@ -1,0 +1,28 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "A R A G C H A T B O T"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dj-database-url>=3.0.1",
+    "django>=6.0",
+    "pgvector>=0.4.2",
+    "djangorestframework>=3.15.0",
+    "django-cors-headers>=4.3.0",
+    "openai>=1.10.0",
+    "tiktoken>=0.5.2",
+    "pypdf>=3.17.0",
+    "python-docx>=1.1.0",
+    "httpx>=0.26.0",
+    "psycopg2-binary>=2.9.11",
+    "uvicorn>=0.40.0",
+    "adrf>=0.1.0",
+    "python-dotenv>=1.0.0",
+    "sentence-transformers>=2.2.0",
+    "djangorestframework-simplejwt>=5.3.0",
+    "cloudinary>=1.36.0",
+    "pytesseract>=0.3.10",
+    "Pillow>=10.0.0",
+    "whitenoise>=6.11.0",
+]

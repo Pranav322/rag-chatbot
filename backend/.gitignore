@@ -1,0 +1,44 @@
+.agent/
+debug_classifier.py 
+debug_db.py 
+
+clear_old_docs.py
+debug*.py
+clear*.py
+*/__pycache__/*
+# test*.py
+ARCHITECTURE.md
+
+
+# env
+.env
+
+# python cache
+__pycache__/
+*.pyc
+
+# test files
+test_*.py
+test_phase*
+test_streaming.py
+
+# scripts
+reset_db.py
+setup_phase1.sh
+view_chunk.py
+
+# generated/static files
+staticfiles/
+resume.pdf
+test_image.png
+
+# dependency lock
+uv.lock
+
+# API_DOCUMENTATION.md
+
+uv.lock
+
+*.pyc
+.venv/
+.venv
