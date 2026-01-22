@@ -1,73 +1,80 @@
-# React + TypeScript + Vite
+# RAG Chatbot Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The frontend interface for the RAG (Retrieval Augmented Generation) Chatbot system. Built with modern web technologies to provide a seamless user experience for document management and AI-powered interaction.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Chat Interface**: Real-time chat with streaming responses (Server-Sent Events).
+- **Document Management**: Drag-and-drop file uploads (PDF, DOCX, Images) with processing status indicators.
+- **Markdown Support**: Renders AI responses with formatted text and code blocks.
+- **Authentication**: Secure login and registration flows with JWT integration.
+- **Responsive Design**: Clean, modern UI built with Tailwind CSS.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: React 19 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS 4
+- **Routing**: React Router DOM 7
+- **HTTP Client**: Axios + Microsoft Fetch Event Source (for streaming)
+- **Icons**: Lucide React
+- **Markdown**: React Markdown
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js (v18 or higher recommended)
+- npm or yarn
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1.  Navigate to the frontend directory:
+    ```bash
+    cd frontend
+    ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+
+## Environment Configuration
+
+Create a `.env` file in the `frontend` directory (or `.env.local`) to configure the connection to the backend API.
+
+```env
+VITE_API_URL=http://localhost:8000/api
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **VITE_API_URL**: The base URL for the Django backend API.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Development
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+To start the development server with Hot Module Replacement (HMR):
+
+```bash
+npm run dev
 ```
+
+The application will be available at `http://localhost:5173`.
+
+## Building for Production
+
+To create an optimized production build:
+
+```bash
+npm run build
+```
+
+The output files will be generated in the `dist` directory. You can preview the production build locally using:
+
+```bash
+npm run preview
+```
+
+## Project Structure
+
+- `src/components`: Reusable UI components (Chat, Documents, Layouts).
+- `src/context`: React Context providers (Authentication state).
+- `src/lib`: Utility functions and API configuration.
+- `src/pages`: Main application views (Chat, Documents, Login, Register).
+- `src/types.ts`: TypeScript interfaces and type definitions.
